@@ -11,8 +11,6 @@
     <Folder Include="Service\Helpers\" />
     <Folder Include="Service\Interfaces\" />
     <Folder Include="Service\Services\" />
-    <Folder Include="Service\DTOs\" />
-    <Folder Include="Service\Exceptions\" />
     <Folder Include="Service\Extensions\" />
     <Folder Include="Service\Mapper\" />
   </ItemGroup>
