@@ -31,13 +31,13 @@ public partial class App : Application
         return serviceCollection.BuildServiceProvider();
     }
 
-    protected override void OnStartup(StartupEventArgs e)
-    {
-        base.OnStartup(e);
+    //protected override void OnStartup(StartupEventArgs e)
+    //{
+    //    base.OnStartup(e);
 
-        // Continue with your application startup logic
-        var mainWindow = _serviceProvider.GetRequiredService<MainWindow>();
-        mainWindow.Show();
-    }
+    //    // Continue with your application startup logic
+    //    var mainWindow = _serviceProvider.GetRequiredService<MainWindow>();
+    //    mainWindow.Show();
+    //}
 
 }

@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:MagazineApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="-38,101,38,-101">
+    <Grid>
 
     </Grid>
-    
+
 </Window>
     

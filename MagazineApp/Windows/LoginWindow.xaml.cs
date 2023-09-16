@@ -19,49 +19,16 @@ public partial class LoginWindow : Window
     {
         InitializeComponent();
     }
-    private void LoginButton_Click(object sender, RoutedEventArgs e)
+    private void CheckBox_Changed(object sender, RoutedEventArgs e)
     {
-        string username = UsernameTextBox.Text;
-        string password = PasswordBox.Password;
-
-        // TODO: Implement authentication logic here
-        if (AuthenticateUser(username, password))
+        if (revealModeCheckBox.IsChecked == true)
         {
-            MessageBox.Show("Login successful!");
-            // Proceed to the main application or navigate to another window
+            passwordBox1.PasswordRevealMode = PasswordRevealMode.Visible;
         }
         else
         {
-            MessageBox.Show("Invalid credentials. Please try again.");
+            passwordBox1.PasswordRevealMode = PasswordRevealMode.Hidden;
         }
-    }
-
-    private void RegisterButton_Click(object sender, RoutedEventArgs e)
-    {
-            showHideButton.Content = "Hide Password";
-    }
-
-    private void ShowPasswordButton_Click(object sender, RoutedEventArgs e)
-    {
-        // Toggle password visibility
-        if (PasswordBox.Visibility == Visibility.Visible)
-        {
-            PasswordBox.Visibility = Visibility.Collapsed;
-            ShowPasswordButton.Content = "Show Password";
-        }
-        else
-        {
-            PasswordBox.Visibility = Visibility.Visible;
-            ShowPasswordButton.Content = "Hide Password";
-        }
-    }
-
-    // TODO: Implement your authentication logic here
-    private bool AuthenticateUser(string username, string password)
-    {
-        // Replace this with your actual authentication logic (e.g., check against a database)
-        // Return true if authentication succeeds, false otherwise
-        return username == "admin" && password == "password";
     }
 
 }
