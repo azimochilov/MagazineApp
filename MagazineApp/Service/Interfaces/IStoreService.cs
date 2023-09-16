@@ -8,8 +8,8 @@ using MagazineApp.Service.DTOs.Stores;
 namespace MagazineApp.Service.Interfaces;
 public interface IStoreService
 {
-    ValueTask<StoreResultDto> AddAsync(StoreCreationDto store);
-    ValueTask<StoreResultDto> ModifyAsync(StoreUpdateDto store);
+    ValueTask<StoreResultDto> AddAsync(StoreCreationDto dto);
+    ValueTask<StoreResultDto> ModifyAsync(StoreUpdateDto dto);
     ValueTask<bool> RemoveAsync(long id);
     ValueTask<Store> RetrieveByIdAsync(long id);        
     ValueTask<IEnumerable<StoreResultDto>> RetrieveAllAsync();    
