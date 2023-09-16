@@ -38,9 +38,7 @@ public partial class LoginWindow : Window
 
     private void RegisterButton_Click(object sender, RoutedEventArgs e)
     {
-        // Open the registration window or navigate to the registration page
-        // Example: RegistrationWindow registrationWindow = new RegistrationWindow();
-        // registrationWindow.Show();
+            showHideButton.Content = "Hide Password";
     }
 
     private void ShowPasswordButton_Click(object sender, RoutedEventArgs e)
