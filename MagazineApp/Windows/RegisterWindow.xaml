@@ -1,0 +1,36 @@
+﻿<Window x:Class="MagazineApp.Windows.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Registration" Height="600" Width="400">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+            <TextBlock Text="Registration" FontSize="24" FontWeight="Bold" Margin="0 0 0 20"/>
+
+            <StackPanel Margin="0 0 0 10">
+                <Label Content="First Name:"/>
+                <TextBox x:Name="FirstNameTextBox" Width="200" Margin="0 5"/>
+            </StackPanel>
+
+            <StackPanel Margin="0 0 0 10">
+                <Label Content="Last Name:"/>
+                <TextBox x:Name="LastNameTextBox" Width="200" Margin="0 5"/>
+            </StackPanel>
+
+            <StackPanel Margin="0 0 0 10">
+                <Label Content="Email:"/>
+                <TextBox x:Name="EmailTextBox" Width="200" Margin="0 5"/>
+            </StackPanel>
+
+            <StackPanel Margin="0 0 0 10">
+                <Label Content="Password:"/>
+                <PasswordBox x:Name="PasswordBox" Width="200" Margin="0 5"/>
+            </StackPanel>
+
+            
+
+            <TextBlock Text="Already have an account?">
+                <Hyperlink Click="LoginLink_Click">Login here!</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
