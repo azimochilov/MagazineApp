@@ -5,10 +5,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MagazineApp.Domain.Entities;
 public class User : Auditable
-{
-    [MinLength(3), MaxLength(50)]
-    public string FirstName { get; set; }
-    [MinLength(3), MaxLength(50)]
+{    
+    public string FirstName { get; set; }   
     public string LastName { get; set; }
     public string Salt { get; set; }
     public string Phone { get; set; }

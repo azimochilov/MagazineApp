@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MagazineApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230916075720_MyMigration2")]
-    partial class MyMigration2
+    [Migration("20230918074648_MyMigration5")]
+    partial class MyMigration5
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -60,15 +60,13 @@ namespace MagazineApp.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("FirstName")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("LastName")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Password")
                         .HasColumnType("longtext");

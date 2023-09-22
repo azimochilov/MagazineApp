@@ -1,0 +1,81 @@
+﻿<Window x:Class="MagazineApp.Windows.StoreWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MagazineApp.Windows"
+        mc:Ignorable="d"
+        Title="Magazine" 
+        WindowState="Maximized"
+        Height="600" Width="900"
+        MinWidth="1050"
+        Loaded="Window_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0"
+              Background="#007ACC">
+            <StackPanel Margin="20">
+                <Border x:Name="menuUsers"
+                        Height="40"
+                        Margin="0 5"
+                        CornerRadius="10"
+                        Background="DarkBlue"
+                        MouseUp="menuStoresAdd">
+                    <Label  
+                        FontSize="18"
+                        HorizontalAlignment="Center"
+                        FontFamily="Jetbrains Mono"
+                        Foreground="White" Margin="0,4,0,4">Add</Label>
+                </Border>
+                <Border x:Name="menuStores"
+                        Height="40"
+                        Margin="0 5"
+                        CornerRadius="10"
+                        Background="DarkBlue"
+                        MouseUp="backToMenu"
+                >
+                    <Label  
+                        FontSize="18"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontFamily="Jetbrains Mono"
+                        Foreground="White">Back To Main Menu</Label>
+                </Border>
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Column="1"
+              Background="#FFFFFF">
+            <Frame x:Name="Navigator"
+                   Margin="10"
+                   NavigationUIVisibility="Hidden"/>
+        </Grid>
+        <Grid Grid.Column="1" Background="#FFFFFF">
+            <StackPanel Margin="10">
+                <ListView x:Name="storeListView" Margin="10" Background="White" BorderBrush="White" BorderThickness="1" SelectionMode="Single" SelectionChanged="storeListView_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Id" Width="150" DisplayMemberBinding="{Binding Id}"/>
+                            <GridViewColumn Header="Store Name" Width="200" DisplayMemberBinding="{Binding Name}"/>
+                            <GridViewColumn Header="Store Address" Width="300" DisplayMemberBinding="{Binding Address}"/>
+                            <GridViewColumn Header="Actions" Width="100">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Content="Update" Click="UpdateStore_Click" Background="DarkBlue" Foreground="White"/>
+                                            <Button Content="Delete" Click="DeleteStore_Click" CommandParameter="{Binding Id}" Background="Red" Foreground="White"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

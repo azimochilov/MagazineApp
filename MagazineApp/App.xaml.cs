@@ -7,12 +7,12 @@ using Microsoft.Extensions.Hosting;
 using MagazineApp.Windows;
 using MagazineApp.Data.IRepositories;
 using MagazineApp.Data.Repositories;
-using MagazineApp.Service.Mappers;
 using MagazineApp.Service.Interfaces;
 using MagazineApp.Service.Services;
+using System.Configuration;
 
 namespace MagazineApp;
 public partial class App : Application
 {
-
+    
 }

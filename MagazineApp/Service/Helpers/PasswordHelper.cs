@@ -3,18 +3,15 @@
 namespace MagazineApp.Service.Helpers;
 public class PasswordHelper
 {
-    public static (string passwordHash, string salt) Hash(string password)
+    public static (string PasswordHash, string Salt) Hash(string password)
     {
         string salt = Guid.NewGuid().ToString();
-        string strongpassword = salt + password;
-        string passwordHash = BCrypt.Net.BCrypt.HashPassword(strongpassword);
-        return (passwordHash, salt);
+        string hash = BCrypt.Net.BCrypt.HashPassword(password + salt);
+        return (PasswordHash: hash, Salt: salt);
     }
 
-    public static bool Verify(string password, string salt, string passwordHash)
+    public static bool Verify(string password, string passwordHash, string salt)
     {
-        string strongpassword = salt + password;
-        var result = BCrypt.Net.BCrypt.Verify(strongpassword, passwordHash);
-        return result;
+        return BCrypt.Net.BCrypt.Verify(password + salt, passwordHash);
     }
 }
